@@ -1,0 +1,12 @@
+lass Solution {
+    public int singleNumber(int[] nums) {
+        int ans=0;
+        for(int i=0;i<nums.length;i++)
+            {
+            ans ^= nums[i];  // ans = (ans) XOR (array element at i) 
+        }
+        return ans;
+    }
+}
+// XOR of 0 and any number A is A. In other words, 0 ^ A = A.
+// XOR of a number A with itself is 0. In other words, A ^ A = 0.
