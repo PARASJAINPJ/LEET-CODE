@@ -1,0 +1,23 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i=0;
+        for(int n:nums){
+            if(i<2 || n!=nums[i-2]){
+                nums[i++]=n;
+            }
+        }
+        return i;
+    }
+}
+
+// int i = 0;: Initialize a variable i to keep track of the current position in the modified array.
+
+// for (int n : nums) {: Iterate through each element n in the input array nums.
+
+// if (i < 2 || n != nums[i - 2]) {: Check if either of the following conditions is true:
+
+// i < 2: This condition ensures that the first two elements can be directly copied to the modified array without any checks.
+// n != nums[i - 2]: This condition checks if the current element is different from the element two positions back. If true, it means we haven't encountered more than two occurrences of the same element.
+// nums[i++] = n;: If the conditions are met, copy the current element n to the modified array at position i and then increment i.
+
+// return i;: Return the length of the modified array.
