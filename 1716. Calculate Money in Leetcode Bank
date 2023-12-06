@@ -1,0 +1,21 @@
+class Solution {
+    public int totalMoney(int n) {
+        int totalmoney=0;
+        int day=1;
+        int dailysum=0;
+        int weekcount=0;
+        while(day<=n){
+           if(day%7==1){
+               weekcount++;
+               dailysum=weekcount;
+           } 
+           else{
+               dailysum++;
+           }
+           totalmoney+=dailysum;
+           day++;
+        }
+        return totalmoney;
+      
+    }
+}
