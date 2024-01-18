@@ -16,6 +16,7 @@ class Solution {
             int count = 1;
 
             s.append('#');
+// Appending '#' ensures that the last set of consecutive characters is also processed in the loop.
             for (int i = 1; i < s.length(); i++) {
 
                 if (s.charAt(i) != currChar) {
