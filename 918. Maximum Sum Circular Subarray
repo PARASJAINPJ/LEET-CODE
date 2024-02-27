@@ -1,0 +1,31 @@
+class Solution {
+    public int maxSubarraySumCircular(int[] nums) {
+        boolean hasZeros = false;
+        int sum=0; for(int i:nums) {sum+=i; if(i==0) hasZeros=true;}
+        int maxSum = Integer.MIN_VALUE;
+        int minSum = Integer.MAX_VALUE;
+        int currSum = 0;
+        //find maxSubarraySum
+        for(int i:nums){
+            currSum+=i;
+            maxSum=Math.max(maxSum, currSum);
+            if(currSum<0){
+                currSum=0;
+            }
+        }
+        //find minSubarraySum
+        currSum=0;
+        for(int i:nums){
+            currSum+=i;
+            minSum=Math.min(minSum, currSum);
+            if(currSum>0){
+                currSum=0;
+            }
+        }
+        System.out.println(maxSum+":"+minSum);
+        if(sum==minSum && !hasZeros){
+            return maxSum;
+        }
+        return Math.max(maxSum, sum-minSum);
+    }
+}
