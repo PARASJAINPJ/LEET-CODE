@@ -16,6 +16,7 @@ class Solution {
                 ans[i-1]=ans[i]+1;
             }
         }
+        //the beloq function is for return ing the sum of array ans
         return Arrays.stream(ans).sum();
         
     }
